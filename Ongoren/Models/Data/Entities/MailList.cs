@@ -10,7 +10,6 @@ namespace Ongoren.Models.Data.Entities
 {
     public class MailList : CoreEntity
     {
-        public MailStatus MailStatus { get; set; }
         public string MailTo { get; set; }
     }
 }

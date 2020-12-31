@@ -65,12 +65,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012311936168_Init.cs" />
-    <Compile Include="Migrations\202012311936168_Init.designer.cs">
-      <DependentUpon>202012311936168_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202012312139223_Init.cs" />
+    <Compile Include="Migrations\202012312139223_Init.designer.cs">
+      <DependentUpon>202012312139223_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Data\Context\Datacontext.cs" />
+    <Compile Include="Models\Data\Context\DataContext.cs" />
     <Compile Include="Models\Data\Entities\Company.cs" />
     <Compile Include="Models\Data\Entities\MailList.cs" />
     <Compile Include="Models\Data\Entities\Person.cs" />
@@ -79,8 +79,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012311936168_Init.resx">
-      <DependentUpon>202012311936168_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012312139223_Init.resx">
+      <DependentUpon>202012312139223_Init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

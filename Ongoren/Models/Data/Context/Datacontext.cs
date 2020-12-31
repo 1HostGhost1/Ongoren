@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Ongoren.Models.Data.Context
 {
-    class Datacontext : DbContext
+    class DataContext : DbContext
     {
-        public Datacontext() : base("name=Conn")
+        public DataContext() : base("name=Conn")
         {
 
         }

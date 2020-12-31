@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ongoren.Models.Data.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace Ongoren
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var people = db.People.Include("Company").ToList();
+            }
         }
     }
 }

@@ -11,6 +11,11 @@ namespace Ongoren.Models.Data.Entities
     [Table("Companies")]
     public class Company : CoreEntity
     {
+        //public Company()
+        //{
+        //    People = new HashSet<Person>();
+        //}
         public string Name { get; set; }
+        //public ICollection<Person> People { get; set; }
     }
 }

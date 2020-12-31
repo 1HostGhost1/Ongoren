@@ -1,4 +1,5 @@
 ﻿using Ongoren.Core.Entity;
+using Ongoren.Core.Entity.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Ongoren.Models.Data.Entities
 {
-    [Table("Persons")]
+    [Table("People")]
     public class Person : CoreEntity
     {
         [MaxLength(5)]
@@ -28,5 +29,6 @@ namespace Ongoren.Models.Data.Entities
         public DateTime ImmigrationTrackingEndDate { get; set; }
         public DateTime MailSendDate { get; set; }
         public int ImmigrationFree { get; set; }
+        public MailStatus MailStatus { get; set; }
     }
 }

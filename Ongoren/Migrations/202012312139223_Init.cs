@@ -22,14 +22,13 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        MailStatus = c.Int(nullable: false),
                         MailTo = c.String(),
                         Status = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Persons",
+                "dbo.People",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -45,6 +44,7 @@
                         ImmigrationTrackingEndDate = c.DateTime(nullable: false),
                         MailSendDate = c.DateTime(nullable: false),
                         ImmigrationFree = c.Int(nullable: false),
+                        MailStatus = c.Int(nullable: false),
                         Status = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -55,9 +55,9 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Persons", "CompanyId", "dbo.Companies");
-            DropIndex("dbo.Persons", new[] { "CompanyId" });
-            DropTable("dbo.Persons");
+            DropForeignKey("dbo.People", "CompanyId", "dbo.Companies");
+            DropIndex("dbo.People", new[] { "CompanyId" });
+            DropTable("dbo.People");
             DropTable("dbo.MailLists");
             DropTable("dbo.Companies");
         }

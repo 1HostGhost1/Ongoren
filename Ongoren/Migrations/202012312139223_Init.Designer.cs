@@ -13,7 +13,7 @@ namespace Ongoren.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202012311936168_Init"; }
+            get { return "202012312139223_Init"; }
         }
         
         string IMigrationMetadata.Source
