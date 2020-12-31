@@ -8,7 +8,7 @@ namespace Ongoren.Core.Entity.Enums
 {
     public enum MailStatus
     {
-        NotSendYet,
+        NotSentYet,
         Sended
     }
 }

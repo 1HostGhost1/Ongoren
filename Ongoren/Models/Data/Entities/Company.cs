@@ -11,6 +11,6 @@ namespace Ongoren.Models.Data.Entities
     [Table("Companies")]
     public class Company : CoreEntity
     {
-        public int Name { get; set; }
+        public string Name { get; set; }
     }
 }

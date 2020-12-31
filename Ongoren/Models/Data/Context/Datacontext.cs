@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ongoren.Models.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,5 +14,9 @@ namespace Ongoren.Models.Data.Context
         {
 
         }
+
+        public DbSet<Person> People { get; set; }
+        public DbSet<MailList> MailLists { get; set; }
+        public DbSet<Company> Companies { get; set; }
     }
 }
