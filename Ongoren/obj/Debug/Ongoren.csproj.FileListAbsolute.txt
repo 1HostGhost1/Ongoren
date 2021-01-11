@@ -6,7 +6,6 @@ C:\Users\EXPER\source\repos\Ongoren\Ongoren\bin\Debug\EntityFramework.SqlServer.
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\bin\Debug\EntityFramework.xml
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.csprojAssemblyReference.cache
-C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Form1.resources
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Properties.Resources.resources
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.csproj.GenerateResource.cache
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.csproj.CoreCompileInputs.cache
@@ -14,3 +13,4 @@ C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.csproj.CopyComplet
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.exe
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.pdb
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Migrations.Init.resources
+C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.MainForm.resources

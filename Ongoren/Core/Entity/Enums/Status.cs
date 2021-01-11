@@ -9,7 +9,7 @@ namespace Ongoren.Core.Entity.Enums
     public enum Status
     {
         None,
-        Activate,
+        Active,
         Deleted,
         Canceled
     }
