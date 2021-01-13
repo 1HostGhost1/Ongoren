@@ -31,6 +31,9 @@ namespace Ongoren
         {
             this.SideBarPanel = new System.Windows.Forms.Panel();
             this.FormControlBar = new System.Windows.Forms.Panel();
+            this.Minimized = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.Button();
+            this.SearchTxt = new System.Windows.Forms.TextBox();
             this.PeopleGridView = new System.Windows.Forms.DataGridView();
             this.WpRpComboBox = new System.Windows.Forms.ComboBox();
             this.StatusComboBox = new System.Windows.Forms.ComboBox();
@@ -62,9 +65,10 @@ namespace Ongoren
             this.label12 = new System.Windows.Forms.Label();
             this.ImmigrationFreeTxt = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.SearchTxt = new System.Windows.Forms.TextBox();
-            this.Exit = new System.Windows.Forms.Button();
-            this.Minimized = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
             this.FormControlBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleGridView)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +94,54 @@ namespace Ongoren
             this.FormControlBar.TabIndex = 1;
             this.FormControlBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormControlBar_MouseDown);
             this.FormControlBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormControlBar_MouseMove);
+            // 
+            // Minimized
+            // 
+            this.Minimized.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Minimized.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.Minimized.FlatAppearance.BorderSize = 0;
+            this.Minimized.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.Minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Minimized.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Minimized.Location = new System.Drawing.Point(1355, 7);
+            this.Minimized.Name = "Minimized";
+            this.Minimized.Size = new System.Drawing.Size(23, 23);
+            this.Minimized.TabIndex = 36;
+            this.Minimized.Text = "_";
+            this.Minimized.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Minimized.UseVisualStyleBackColor = true;
+            this.Minimized.Click += new System.EventHandler(this.Minimized_Click);
+            // 
+            // Exit
+            // 
+            this.Exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.Exit.FlatAppearance.BorderSize = 0;
+            this.Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Exit.Location = new System.Drawing.Point(1386, 7);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(18, 23);
+            this.Exit.TabIndex = 35;
+            this.Exit.Text = "X";
+            this.Exit.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // SearchTxt
+            // 
+            this.SearchTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.SearchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.SearchTxt.Location = new System.Drawing.Point(511, 10);
+            this.SearchTxt.Name = "SearchTxt";
+            this.SearchTxt.Size = new System.Drawing.Size(384, 20);
+            this.SearchTxt.TabIndex = 0;
+            this.SearchTxt.Text = "Search";
+            this.SearchTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SearchTxt.TextChanged += new System.EventHandler(this.SearchTxt_TextChanged);
+            this.SearchTxt.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.SearchTxt.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // PeopleGridView
             // 
@@ -417,52 +469,58 @@ namespace Ongoren
             this.panel6.Size = new System.Drawing.Size(121, 1);
             this.panel6.TabIndex = 32;
             // 
-            // SearchTxt
+            // AddBtn
             // 
-            this.SearchTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.SearchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.SearchTxt.Location = new System.Drawing.Point(511, 10);
-            this.SearchTxt.Name = "SearchTxt";
-            this.SearchTxt.Size = new System.Drawing.Size(384, 20);
-            this.SearchTxt.TabIndex = 0;
-            this.SearchTxt.Text = "Search";
-            this.SearchTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SearchTxt.Enter += new System.EventHandler(this.TextBox_Enter);
-            this.SearchTxt.Leave += new System.EventHandler(this.TextBox_Leave);
+            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.AddBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.AddBtn.Location = new System.Drawing.Point(950, 472);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(75, 23);
+            this.AddBtn.TabIndex = 35;
+            this.AddBtn.Text = "Add";
+            this.AddBtn.UseVisualStyleBackColor = false;
             // 
-            // Exit
+            // UpdateBtn
             // 
-            this.Exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.Exit.FlatAppearance.BorderSize = 0;
-            this.Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
-            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.Exit.Location = new System.Drawing.Point(1386, 7);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(18, 23);
-            this.Exit.TabIndex = 35;
-            this.Exit.Text = "X";
-            this.Exit.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.UpdateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.UpdateBtn.Location = new System.Drawing.Point(1060, 472);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(75, 23);
+            this.UpdateBtn.TabIndex = 36;
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = false;
             // 
-            // Minimized
+            // DeleteBtn
             // 
-            this.Minimized.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Minimized.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.Minimized.FlatAppearance.BorderSize = 0;
-            this.Minimized.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.Minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Minimized.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.Minimized.Location = new System.Drawing.Point(1355, 7);
-            this.Minimized.Name = "Minimized";
-            this.Minimized.Size = new System.Drawing.Size(23, 23);
-            this.Minimized.TabIndex = 36;
-            this.Minimized.Text = "_";
-            this.Minimized.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Minimized.UseVisualStyleBackColor = true;
-            this.Minimized.Click += new System.EventHandler(this.Minimized_Click);
+            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.DeleteBtn.Location = new System.Drawing.Point(1170, 472);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteBtn.TabIndex = 37;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            // 
+            // ClearBtn
+            // 
+            this.ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.ClearBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.ClearBtn.Location = new System.Drawing.Point(1060, 513);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(75, 23);
+            this.ClearBtn.TabIndex = 38;
+            this.ClearBtn.Text = "Clear";
+            this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // MainForm
             // 
@@ -470,6 +528,10 @@ namespace Ongoren
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(1413, 548);
+            this.Controls.Add(this.ClearBtn);
+            this.Controls.Add(this.DeleteBtn);
+            this.Controls.Add(this.UpdateBtn);
+            this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.ImmigrationFreeTxt);
             this.Controls.Add(this.panel6);
@@ -553,5 +615,9 @@ namespace Ongoren
         private System.Windows.Forms.TextBox SearchTxt;
         private System.Windows.Forms.Button Minimized;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Button AddBtn;
+        private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button ClearBtn;
     }
 }
