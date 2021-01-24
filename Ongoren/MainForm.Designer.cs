@@ -69,17 +69,23 @@ namespace Ongoren
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
+            this.IdTxt = new System.Windows.Forms.TextBox();
+            this.ChildPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SideBarPanel.SuspendLayout();
             this.FormControlBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleGridView)).BeginInit();
+            this.ChildPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SideBarPanel
             // 
             this.SideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.SideBarPanel.Controls.Add(this.button1);
             this.SideBarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideBarPanel.Location = new System.Drawing.Point(0, 0);
             this.SideBarPanel.Name = "SideBarPanel";
-            this.SideBarPanel.Size = new System.Drawing.Size(200, 548);
+            this.SideBarPanel.Size = new System.Drawing.Size(200, 549);
             this.SideBarPanel.TabIndex = 0;
             // 
             // FormControlBar
@@ -148,7 +154,7 @@ namespace Ongoren
             this.PeopleGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.PeopleGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.PeopleGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PeopleGridView.Location = new System.Drawing.Point(206, 46);
+            this.PeopleGridView.Location = new System.Drawing.Point(0, 0);
             this.PeopleGridView.Name = "PeopleGridView";
             this.PeopleGridView.RowHeadersVisible = false;
             this.PeopleGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -165,7 +171,7 @@ namespace Ongoren
             this.WpRpComboBox.Items.AddRange(new object[] {
             "WP",
             "RP"});
-            this.WpRpComboBox.Location = new System.Drawing.Point(253, 376);
+            this.WpRpComboBox.Location = new System.Drawing.Point(47, 330);
             this.WpRpComboBox.Name = "WpRpComboBox";
             this.WpRpComboBox.Size = new System.Drawing.Size(121, 21);
             this.WpRpComboBox.TabIndex = 0;
@@ -179,7 +185,7 @@ namespace Ongoren
             this.StatusComboBox.Items.AddRange(new object[] {
             "Active",
             "Canceled"});
-            this.StatusComboBox.Location = new System.Drawing.Point(253, 434);
+            this.StatusComboBox.Location = new System.Drawing.Point(47, 388);
             this.StatusComboBox.Name = "StatusComboBox";
             this.StatusComboBox.Size = new System.Drawing.Size(121, 21);
             this.StatusComboBox.TabIndex = 1;
@@ -189,7 +195,7 @@ namespace Ongoren
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label1.Location = new System.Drawing.Point(250, 351);
+            this.label1.Location = new System.Drawing.Point(44, 305);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 6;
@@ -199,7 +205,7 @@ namespace Ongoren
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label2.Location = new System.Drawing.Point(249, 409);
+            this.label2.Location = new System.Drawing.Point(43, 363);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 8;
@@ -208,7 +214,7 @@ namespace Ongoren
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.panel2.Location = new System.Drawing.Point(430, 395);
+            this.panel2.Location = new System.Drawing.Point(224, 349);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(121, 1);
             this.panel2.TabIndex = 7;
@@ -218,7 +224,7 @@ namespace Ongoren
             this.AppNoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.AppNoTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AppNoTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.AppNoTxt.Location = new System.Drawing.Point(430, 376);
+            this.AppNoTxt.Location = new System.Drawing.Point(224, 330);
             this.AppNoTxt.Name = "AppNoTxt";
             this.AppNoTxt.Size = new System.Drawing.Size(100, 13);
             this.AppNoTxt.TabIndex = 2;
@@ -231,7 +237,7 @@ namespace Ongoren
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label3.Location = new System.Drawing.Point(427, 360);
+            this.label3.Location = new System.Drawing.Point(221, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 11;
@@ -242,7 +248,7 @@ namespace Ongoren
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label4.Location = new System.Drawing.Point(427, 409);
+            this.label4.Location = new System.Drawing.Point(221, 363);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 14;
@@ -253,7 +259,7 @@ namespace Ongoren
             this.YknTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.YknTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.YknTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.YknTxt.Location = new System.Drawing.Point(430, 425);
+            this.YknTxt.Location = new System.Drawing.Point(224, 379);
             this.YknTxt.Name = "YknTxt";
             this.YknTxt.Size = new System.Drawing.Size(100, 13);
             this.YknTxt.TabIndex = 3;
@@ -264,7 +270,7 @@ namespace Ongoren
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.panel1.Location = new System.Drawing.Point(430, 444);
+            this.panel1.Location = new System.Drawing.Point(224, 398);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(121, 1);
             this.panel1.TabIndex = 12;
@@ -274,7 +280,7 @@ namespace Ongoren
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label5.Location = new System.Drawing.Point(582, 399);
+            this.label5.Location = new System.Drawing.Point(376, 353);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 17;
@@ -285,7 +291,7 @@ namespace Ongoren
             this.CompanyNameTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.CompanyNameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CompanyNameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.CompanyNameTxt.Location = new System.Drawing.Point(585, 415);
+            this.CompanyNameTxt.Location = new System.Drawing.Point(379, 369);
             this.CompanyNameTxt.Name = "CompanyNameTxt";
             this.CompanyNameTxt.Size = new System.Drawing.Size(100, 13);
             this.CompanyNameTxt.TabIndex = 6;
@@ -296,7 +302,7 @@ namespace Ongoren
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.panel3.Location = new System.Drawing.Point(585, 434);
+            this.panel3.Location = new System.Drawing.Point(379, 388);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(121, 1);
             this.panel3.TabIndex = 15;
@@ -306,7 +312,7 @@ namespace Ongoren
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label6.Location = new System.Drawing.Point(738, 360);
+            this.label6.Location = new System.Drawing.Point(532, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 20;
@@ -317,7 +323,7 @@ namespace Ongoren
             this.NameTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.NameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.NameTxt.Location = new System.Drawing.Point(741, 376);
+            this.NameTxt.Location = new System.Drawing.Point(535, 330);
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(100, 13);
             this.NameTxt.TabIndex = 4;
@@ -328,7 +334,7 @@ namespace Ongoren
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.panel4.Location = new System.Drawing.Point(741, 395);
+            this.panel4.Location = new System.Drawing.Point(535, 349);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(121, 1);
             this.panel4.TabIndex = 18;
@@ -338,7 +344,7 @@ namespace Ongoren
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label7.Location = new System.Drawing.Point(738, 409);
+            this.label7.Location = new System.Drawing.Point(532, 363);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 23;
@@ -349,7 +355,7 @@ namespace Ongoren
             this.SurnameTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.SurnameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SurnameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.SurnameTxt.Location = new System.Drawing.Point(741, 425);
+            this.SurnameTxt.Location = new System.Drawing.Point(535, 379);
             this.SurnameTxt.Name = "SurnameTxt";
             this.SurnameTxt.Size = new System.Drawing.Size(100, 13);
             this.SurnameTxt.TabIndex = 5;
@@ -360,14 +366,14 @@ namespace Ongoren
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.panel5.Location = new System.Drawing.Point(741, 444);
+            this.panel5.Location = new System.Drawing.Point(535, 398);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(121, 1);
             this.panel5.TabIndex = 21;
             // 
             // AppDateDtp
             // 
-            this.AppDateDtp.Location = new System.Drawing.Point(911, 376);
+            this.AppDateDtp.Location = new System.Drawing.Point(705, 330);
             this.AppDateDtp.Name = "AppDateDtp";
             this.AppDateDtp.Size = new System.Drawing.Size(167, 20);
             this.AppDateDtp.TabIndex = 8;
@@ -377,7 +383,7 @@ namespace Ongoren
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label8.Location = new System.Drawing.Point(908, 360);
+            this.label8.Location = new System.Drawing.Point(702, 314);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 13);
             this.label8.TabIndex = 25;
@@ -388,7 +394,7 @@ namespace Ongoren
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label9.Location = new System.Drawing.Point(908, 409);
+            this.label9.Location = new System.Drawing.Point(702, 363);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 27;
@@ -396,7 +402,7 @@ namespace Ongoren
             // 
             // ExpiryDateDtp
             // 
-            this.ExpiryDateDtp.Location = new System.Drawing.Point(911, 425);
+            this.ExpiryDateDtp.Location = new System.Drawing.Point(705, 379);
             this.ExpiryDateDtp.Name = "ExpiryDateDtp";
             this.ExpiryDateDtp.Size = new System.Drawing.Size(167, 20);
             this.ExpiryDateDtp.TabIndex = 10;
@@ -406,7 +412,7 @@ namespace Ongoren
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label10.Location = new System.Drawing.Point(1116, 360);
+            this.label10.Location = new System.Drawing.Point(910, 314);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 29;
@@ -414,7 +420,7 @@ namespace Ongoren
             // 
             // IssueDateDtp
             // 
-            this.IssueDateDtp.Location = new System.Drawing.Point(1119, 376);
+            this.IssueDateDtp.Location = new System.Drawing.Point(913, 330);
             this.IssueDateDtp.Name = "IssueDateDtp";
             this.IssueDateDtp.Size = new System.Drawing.Size(167, 20);
             this.IssueDateDtp.TabIndex = 9;
@@ -424,7 +430,7 @@ namespace Ongoren
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label11.Location = new System.Drawing.Point(1116, 409);
+            this.label11.Location = new System.Drawing.Point(910, 363);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(153, 13);
             this.label11.TabIndex = 31;
@@ -432,7 +438,7 @@ namespace Ongoren
             // 
             // ImmTrackEndDateDtp
             // 
-            this.ImmTrackEndDateDtp.Location = new System.Drawing.Point(1119, 425);
+            this.ImmTrackEndDateDtp.Location = new System.Drawing.Point(913, 379);
             this.ImmTrackEndDateDtp.Name = "ImmTrackEndDateDtp";
             this.ImmTrackEndDateDtp.Size = new System.Drawing.Size(167, 20);
             this.ImmTrackEndDateDtp.TabIndex = 11;
@@ -442,7 +448,7 @@ namespace Ongoren
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label12.Location = new System.Drawing.Point(582, 459);
+            this.label12.Location = new System.Drawing.Point(376, 413);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 13);
             this.label12.TabIndex = 34;
@@ -453,7 +459,7 @@ namespace Ongoren
             this.ImmigrationFreeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ImmigrationFreeTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ImmigrationFreeTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.ImmigrationFreeTxt.Location = new System.Drawing.Point(585, 475);
+            this.ImmigrationFreeTxt.Location = new System.Drawing.Point(379, 429);
             this.ImmigrationFreeTxt.Name = "ImmigrationFreeTxt";
             this.ImmigrationFreeTxt.Size = new System.Drawing.Size(100, 13);
             this.ImmigrationFreeTxt.TabIndex = 7;
@@ -464,7 +470,7 @@ namespace Ongoren
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.panel6.Location = new System.Drawing.Point(585, 494);
+            this.panel6.Location = new System.Drawing.Point(379, 448);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(121, 1);
             this.panel6.TabIndex = 32;
@@ -475,12 +481,13 @@ namespace Ongoren
             this.AddBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.AddBtn.Location = new System.Drawing.Point(950, 472);
+            this.AddBtn.Location = new System.Drawing.Point(744, 426);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(75, 23);
             this.AddBtn.TabIndex = 35;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // UpdateBtn
             // 
@@ -488,12 +495,13 @@ namespace Ongoren
             this.UpdateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.UpdateBtn.Location = new System.Drawing.Point(1060, 472);
+            this.UpdateBtn.Location = new System.Drawing.Point(854, 426);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(75, 23);
             this.UpdateBtn.TabIndex = 36;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -501,12 +509,13 @@ namespace Ongoren
             this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.DeleteBtn.Location = new System.Drawing.Point(1170, 472);
+            this.DeleteBtn.Location = new System.Drawing.Point(964, 426);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
             this.DeleteBtn.TabIndex = 37;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // ClearBtn
             // 
@@ -514,7 +523,7 @@ namespace Ongoren
             this.ClearBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ClearBtn.Location = new System.Drawing.Point(1060, 513);
+            this.ClearBtn.Location = new System.Drawing.Point(854, 467);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(75, 23);
             this.ClearBtn.TabIndex = 38;
@@ -522,58 +531,87 @@ namespace Ongoren
             this.ClearBtn.UseVisualStyleBackColor = false;
             this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
+            // IdTxt
+            // 
+            this.IdTxt.Location = new System.Drawing.Point(57, 448);
+            this.IdTxt.Name = "IdTxt";
+            this.IdTxt.Size = new System.Drawing.Size(100, 20);
+            this.IdTxt.TabIndex = 39;
+            this.IdTxt.Visible = false;
+            // 
+            // ChildPanel
+            // 
+            this.ChildPanel.Controls.Add(this.PeopleGridView);
+            this.ChildPanel.Controls.Add(this.IdTxt);
+            this.ChildPanel.Controls.Add(this.WpRpComboBox);
+            this.ChildPanel.Controls.Add(this.ClearBtn);
+            this.ChildPanel.Controls.Add(this.StatusComboBox);
+            this.ChildPanel.Controls.Add(this.DeleteBtn);
+            this.ChildPanel.Controls.Add(this.label1);
+            this.ChildPanel.Controls.Add(this.UpdateBtn);
+            this.ChildPanel.Controls.Add(this.panel2);
+            this.ChildPanel.Controls.Add(this.AddBtn);
+            this.ChildPanel.Controls.Add(this.label2);
+            this.ChildPanel.Controls.Add(this.label12);
+            this.ChildPanel.Controls.Add(this.AppNoTxt);
+            this.ChildPanel.Controls.Add(this.ImmigrationFreeTxt);
+            this.ChildPanel.Controls.Add(this.label3);
+            this.ChildPanel.Controls.Add(this.panel6);
+            this.ChildPanel.Controls.Add(this.panel1);
+            this.ChildPanel.Controls.Add(this.label11);
+            this.ChildPanel.Controls.Add(this.YknTxt);
+            this.ChildPanel.Controls.Add(this.ImmTrackEndDateDtp);
+            this.ChildPanel.Controls.Add(this.label4);
+            this.ChildPanel.Controls.Add(this.label10);
+            this.ChildPanel.Controls.Add(this.panel3);
+            this.ChildPanel.Controls.Add(this.IssueDateDtp);
+            this.ChildPanel.Controls.Add(this.CompanyNameTxt);
+            this.ChildPanel.Controls.Add(this.label9);
+            this.ChildPanel.Controls.Add(this.label5);
+            this.ChildPanel.Controls.Add(this.ExpiryDateDtp);
+            this.ChildPanel.Controls.Add(this.panel4);
+            this.ChildPanel.Controls.Add(this.label8);
+            this.ChildPanel.Controls.Add(this.NameTxt);
+            this.ChildPanel.Controls.Add(this.AppDateDtp);
+            this.ChildPanel.Controls.Add(this.label6);
+            this.ChildPanel.Controls.Add(this.label7);
+            this.ChildPanel.Controls.Add(this.panel5);
+            this.ChildPanel.Controls.Add(this.SurnameTxt);
+            this.ChildPanel.Location = new System.Drawing.Point(206, 46);
+            this.ChildPanel.Name = "ChildPanel";
+            this.ChildPanel.Size = new System.Drawing.Size(1200, 500);
+            this.ChildPanel.TabIndex = 40;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(38, 213);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(1413, 548);
-            this.Controls.Add(this.ClearBtn);
-            this.Controls.Add(this.DeleteBtn);
-            this.Controls.Add(this.UpdateBtn);
-            this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.ImmigrationFreeTxt);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.ImmTrackEndDateDtp);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.IssueDateDtp);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.ExpiryDateDtp);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.AppDateDtp);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.SurnameTxt);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.NameTxt);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.CompanyNameTxt);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.YknTxt);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.AppNoTxt);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.StatusComboBox);
-            this.Controls.Add(this.WpRpComboBox);
-            this.Controls.Add(this.PeopleGridView);
+            this.ClientSize = new System.Drawing.Size(1413, 549);
+            this.Controls.Add(this.ChildPanel);
             this.Controls.Add(this.FormControlBar);
             this.Controls.Add(this.SideBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SideBarPanel.ResumeLayout(false);
             this.FormControlBar.ResumeLayout(false);
             this.FormControlBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleGridView)).EndInit();
+            this.ChildPanel.ResumeLayout(false);
+            this.ChildPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -619,5 +657,8 @@ namespace Ongoren
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.TextBox IdTxt;
+        private System.Windows.Forms.Panel ChildPanel;
+        private System.Windows.Forms.Button button1;
     }
 }

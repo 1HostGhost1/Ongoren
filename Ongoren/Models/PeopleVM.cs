@@ -9,6 +9,7 @@ namespace Ongoren.Models
 {
     public class PeopleVM
     {
+        public int Id { get; set; }
         public Status Status { get; set; }
         public string WpOrRp { get; set; }
         public string AppNo { get; set; }
@@ -20,6 +21,6 @@ namespace Ongoren.Models
         public DateTime IssueDate { get; set; }
         public DateTime ExpiryDate { get; set; }
         public DateTime ImmTrackEndDate { get; set; }
-        public int ImmigrationFree { get; set; }
+        public string ImmigrationFree { get; set; }
     }
 }

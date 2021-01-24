@@ -17,6 +17,5 @@ namespace Ongoren.Models.Data.Context
 
         public DbSet<Person> People { get; set; }
         public DbSet<MailList> MailLists { get; set; }
-        public DbSet<Company> Companies { get; set; }
     }
 }

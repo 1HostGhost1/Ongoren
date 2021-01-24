@@ -21,14 +21,13 @@ namespace Ongoren.Models.Data.Entities
         public string YKN { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public Company Company { get; set; }
-        public int CompanyId { get; set; }
+        public string CompanyName { get; set; }
         public DateTime ApplicationDate { get; set; }
         public DateTime IssueDate { get; set; }
         public DateTime ExpiryDate { get; set; }
         public DateTime ImmigrationTrackingEndDate { get; set; }
         public DateTime MailSendDate { get; set; }
-        public int ImmigrationFree { get; set; }
+        public string ImmigrationFree { get; set; }
         public MailStatus MailStatus { get; set; }
     }
 }
