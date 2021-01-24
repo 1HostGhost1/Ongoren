@@ -15,3 +15,4 @@ C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.pdb
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Migrations.Init.resources
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.MainForm.resources
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Migrations.Second.resources
+C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.MailListForm.resources

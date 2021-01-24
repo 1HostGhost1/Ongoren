@@ -29,6 +29,7 @@ namespace Ongoren
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.SideBarPanel = new System.Windows.Forms.Panel();
             this.FormControlBar = new System.Windows.Forms.Panel();
             this.Minimized = new System.Windows.Forms.Button();
@@ -71,17 +72,25 @@ namespace Ongoren
             this.ClearBtn = new System.Windows.Forms.Button();
             this.IdTxt = new System.Windows.Forms.TextBox();
             this.ChildPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.HomeBtn = new System.Windows.Forms.Button();
+            this.MailListBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ExcelBtn = new System.Windows.Forms.Button();
+            this.TrashBtn = new System.Windows.Forms.Button();
             this.SideBarPanel.SuspendLayout();
             this.FormControlBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleGridView)).BeginInit();
             this.ChildPanel.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SideBarPanel
             // 
             this.SideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.SideBarPanel.Controls.Add(this.button1);
+            this.SideBarPanel.Controls.Add(this.panel7);
+            this.SideBarPanel.Controls.Add(this.pictureBox1);
             this.SideBarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideBarPanel.Location = new System.Drawing.Point(0, 0);
             this.SideBarPanel.Name = "SideBarPanel";
@@ -94,9 +103,9 @@ namespace Ongoren
             this.FormControlBar.Controls.Add(this.Minimized);
             this.FormControlBar.Controls.Add(this.Exit);
             this.FormControlBar.Controls.Add(this.SearchTxt);
-            this.FormControlBar.Location = new System.Drawing.Point(3, 0);
+            this.FormControlBar.Location = new System.Drawing.Point(0, 0);
             this.FormControlBar.Name = "FormControlBar";
-            this.FormControlBar.Size = new System.Drawing.Size(1411, 40);
+            this.FormControlBar.Size = new System.Drawing.Size(1414, 40);
             this.FormControlBar.TabIndex = 1;
             this.FormControlBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormControlBar_MouseDown);
             this.FormControlBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormControlBar_MouseMove);
@@ -194,20 +203,22 @@ namespace Ongoren
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label1.Location = new System.Drawing.Point(44, 305);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "WP / RP";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label2.Location = new System.Drawing.Point(43, 363);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "STATUS";
             // 
@@ -236,10 +247,11 @@ namespace Ongoren
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label3.Location = new System.Drawing.Point(221, 314);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Application No";
             // 
@@ -247,10 +259,11 @@ namespace Ongoren
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label4.Location = new System.Drawing.Point(221, 363);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "YKN";
             // 
@@ -279,10 +292,11 @@ namespace Ongoren
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label5.Location = new System.Drawing.Point(376, 353);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Company Name";
             // 
@@ -311,10 +325,11 @@ namespace Ongoren
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label6.Location = new System.Drawing.Point(532, 314);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 20;
             this.label6.Text = "Name";
             // 
@@ -343,10 +358,11 @@ namespace Ongoren
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label7.Location = new System.Drawing.Point(532, 363);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 23;
             this.label7.Text = "Surname";
             // 
@@ -382,10 +398,11 @@ namespace Ongoren
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label8.Location = new System.Drawing.Point(702, 314);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 13);
+            this.label8.Size = new System.Drawing.Size(101, 13);
             this.label8.TabIndex = 25;
             this.label8.Text = "Application Date";
             // 
@@ -393,10 +410,11 @@ namespace Ongoren
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label9.Location = new System.Drawing.Point(702, 363);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.Size = new System.Drawing.Size(72, 13);
             this.label9.TabIndex = 27;
             this.label9.Text = "Expiry Date";
             // 
@@ -411,10 +429,11 @@ namespace Ongoren
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label10.Location = new System.Drawing.Point(910, 314);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.Size = new System.Drawing.Size(68, 13);
             this.label10.TabIndex = 29;
             this.label10.Text = "Issue Date";
             // 
@@ -429,10 +448,11 @@ namespace Ongoren
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label11.Location = new System.Drawing.Point(910, 363);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(153, 13);
+            this.label11.Size = new System.Drawing.Size(182, 13);
             this.label11.TabIndex = 31;
             this.label11.Text = "Immigration Tracking End Date";
             // 
@@ -447,10 +467,11 @@ namespace Ongoren
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label12.Location = new System.Drawing.Point(376, 413);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 13);
+            this.label12.Size = new System.Drawing.Size(100, 13);
             this.label12.TabIndex = 34;
             this.label12.Text = "Immigration Free";
             // 
@@ -478,8 +499,9 @@ namespace Ongoren
             // AddBtn
             // 
             this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.AddBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.AddBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
             this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.AddBtn.Location = new System.Drawing.Point(744, 426);
             this.AddBtn.Name = "AddBtn";
@@ -492,8 +514,9 @@ namespace Ongoren
             // UpdateBtn
             // 
             this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.UpdateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.UpdateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
             this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.UpdateBtn.Location = new System.Drawing.Point(854, 426);
             this.UpdateBtn.Name = "UpdateBtn";
@@ -506,8 +529,9 @@ namespace Ongoren
             // DeleteBtn
             // 
             this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.DeleteBtn.Location = new System.Drawing.Point(964, 426);
             this.DeleteBtn.Name = "DeleteBtn";
@@ -520,8 +544,9 @@ namespace Ongoren
             // ClearBtn
             // 
             this.ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.ClearBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.ClearBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
             this.ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ClearBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClearBtn.Location = new System.Drawing.Point(854, 467);
             this.ClearBtn.Name = "ClearBtn";
@@ -582,15 +607,85 @@ namespace Ongoren
             this.ChildPanel.Size = new System.Drawing.Size(1200, 500);
             this.ChildPanel.TabIndex = 40;
             // 
-            // button1
+            // panel7
             // 
-            this.button1.Location = new System.Drawing.Point(38, 213);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel7.Controls.Add(this.TrashBtn);
+            this.panel7.Controls.Add(this.ExcelBtn);
+            this.panel7.Controls.Add(this.MailListBtn);
+            this.panel7.Controls.Add(this.HomeBtn);
+            this.panel7.Location = new System.Drawing.Point(0, 240);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 309);
+            this.panel7.TabIndex = 42;
+            // 
+            // HomeBtn
+            // 
+            this.HomeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.HomeBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HomeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.HomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HomeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.HomeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.HomeBtn.Location = new System.Drawing.Point(0, 0);
+            this.HomeBtn.Name = "HomeBtn";
+            this.HomeBtn.Size = new System.Drawing.Size(200, 50);
+            this.HomeBtn.TabIndex = 40;
+            this.HomeBtn.Text = "HOME";
+            this.HomeBtn.UseVisualStyleBackColor = false;
+            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
+            // 
+            // MailListBtn
+            // 
+            this.MailListBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.MailListBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.MailListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MailListBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MailListBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.MailListBtn.Location = new System.Drawing.Point(0, 47);
+            this.MailListBtn.Name = "MailListBtn";
+            this.MailListBtn.Size = new System.Drawing.Size(200, 50);
+            this.MailListBtn.TabIndex = 41;
+            this.MailListBtn.Text = "MAIL PROCESS";
+            this.MailListBtn.UseVisualStyleBackColor = false;
+            this.MailListBtn.Click += new System.EventHandler(this.MailListBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ongoren.Properties.Resources.Ongoren_Recovered;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ExcelBtn
+            // 
+            this.ExcelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.ExcelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.ExcelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ExcelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.ExcelBtn.Location = new System.Drawing.Point(0, 95);
+            this.ExcelBtn.Name = "ExcelBtn";
+            this.ExcelBtn.Size = new System.Drawing.Size(200, 50);
+            this.ExcelBtn.TabIndex = 42;
+            this.ExcelBtn.Text = "EXCEL";
+            this.ExcelBtn.UseVisualStyleBackColor = false;
+            // 
+            // TrashBtn
+            // 
+            this.TrashBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TrashBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.TrashBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TrashBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TrashBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.TrashBtn.Location = new System.Drawing.Point(0, 144);
+            this.TrashBtn.Name = "TrashBtn";
+            this.TrashBtn.Size = new System.Drawing.Size(200, 50);
+            this.TrashBtn.TabIndex = 43;
+            this.TrashBtn.Text = "TRASH";
+            this.TrashBtn.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -602,6 +697,7 @@ namespace Ongoren
             this.Controls.Add(this.FormControlBar);
             this.Controls.Add(this.SideBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -611,6 +707,8 @@ namespace Ongoren
             ((System.ComponentModel.ISupportInitialize)(this.PeopleGridView)).EndInit();
             this.ChildPanel.ResumeLayout(false);
             this.ChildPanel.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -659,6 +757,11 @@ namespace Ongoren
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.TextBox IdTxt;
         private System.Windows.Forms.Panel ChildPanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button HomeBtn;
+        private System.Windows.Forms.Button MailListBtn;
+        private System.Windows.Forms.Button TrashBtn;
+        private System.Windows.Forms.Button ExcelBtn;
     }
 }

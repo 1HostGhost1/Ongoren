@@ -115,7 +115,7 @@ namespace Ongoren
         {
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(57, 62, 70);
-            dataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(214, 90, 49);
+            dataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(20, 116, 190);
             dataGridView.DefaultCellStyle.SelectionForeColor = Color.White;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -407,9 +407,15 @@ namespace Ongoren
             childForm.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MailListBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new MailList());
+            OpenChildForm(new MailListForm());
+        }
+
+        private void HomeBtn_Click(object sender, EventArgs e)
+        {
+            if(activeForm != null)
+                activeForm.Close();
         }
     }
 }
