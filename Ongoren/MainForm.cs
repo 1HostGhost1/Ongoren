@@ -209,7 +209,6 @@ namespace Ongoren
 
         private void SearchTxt_TextChanged(object sender, EventArgs e)
         {
-
             var textBox = sender as TextBox;
             var text = textBox.Text;
 
@@ -385,6 +384,7 @@ namespace Ongoren
                     var id = Convert.ToInt32(IdTxt.Text);
                     var person = db.People.Find(id);
                     person.Status = Status.Deleted;
+                    person.ModifiedDate = DateTime.Now;
                     db.SaveChanges();
                     ClearForm();
                     LoadData();
@@ -407,22 +407,31 @@ namespace Ongoren
             childForm.Show();
         }
 
-        private void MailListBtn_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new MailListForm());
-        }
-
         private void HomeBtn_Click(object sender, EventArgs e)
         {
-            if(activeForm != null)
+            if (activeForm != null)
                 activeForm.Close();
 
             LoadData();
+            SearchTxt.Enabled = true;
+        }
+
+        private void MailListBtn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new MailListForm());
+            SearchTxt.Enabled = false;
+        }
+
+        private void ExcelBtn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ExcelProcess());
+            SearchTxt.Enabled = false;
         }
 
         private void TrashBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Trash());
+            SearchTxt.Enabled = false;
         }
     }
 }

@@ -136,6 +136,7 @@ namespace Ongoren
             this.ExcelBtn.TabIndex = 42;
             this.ExcelBtn.Text = "EXCEL PROCESS";
             this.ExcelBtn.UseVisualStyleBackColor = false;
+            this.ExcelBtn.Click += new System.EventHandler(this.ExcelBtn_Click);
             // 
             // MailListBtn
             // 
@@ -694,13 +695,14 @@ namespace Ongoren
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(1413, 549);
+            this.ControlBox = false;
             this.Controls.Add(this.ChildPanel);
             this.Controls.Add(this.FormControlBar);
             this.Controls.Add(this.SideBarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Ongoren Desktop App";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SideBarPanel.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

@@ -36,7 +36,7 @@ namespace Ongoren
             {
                 var people = db.People
                     .Where(x => x.Status == Status.Deleted)
-                    .OrderByDescending(x => x.CreatedDate)
+                    .OrderByDescending(x => x.ModifiedDate)
                     .Select(x => new PeopleVM
                     {
                         Id = x.Id,
@@ -95,6 +95,7 @@ namespace Ongoren
                     var person = db.People.Find(id);
 
                     person.Status = activeOrCanceled == DialogResult.Yes ? Status.Active : Status.Canceled;
+                    person.ModifiedDate = DateTime.Now;
 
                     db.SaveChanges();
                     TrashUserIdTxt.Text = string.Empty;
