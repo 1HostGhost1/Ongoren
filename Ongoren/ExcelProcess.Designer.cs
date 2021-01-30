@@ -1,7 +1,7 @@
 ﻿
 namespace Ongoren
 {
-    partial class MailListForm
+    partial class ExcelProcess
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,14 @@ namespace Ongoren
         {
             this.SuspendLayout();
             // 
-            // MailListForm
+            // ExcelProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 461);
-            this.Name = "MailListForm";
-            this.Text = "MailLİstForm";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ClientSize = new System.Drawing.Size(1204, 461);
+            this.Name = "ExcelProcess";
+            this.Text = "ExcelProcess";
             this.ResumeLayout(false);
 
         }

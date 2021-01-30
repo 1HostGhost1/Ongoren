@@ -31,6 +31,12 @@ namespace Ongoren
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.SideBarPanel = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.TrashBtn = new System.Windows.Forms.Button();
+            this.ExcelBtn = new System.Windows.Forms.Button();
+            this.MailListBtn = new System.Windows.Forms.Button();
+            this.HomeBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FormControlBar = new System.Windows.Forms.Panel();
             this.Minimized = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
@@ -72,18 +78,12 @@ namespace Ongoren
             this.ClearBtn = new System.Windows.Forms.Button();
             this.IdTxt = new System.Windows.Forms.TextBox();
             this.ChildPanel = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.HomeBtn = new System.Windows.Forms.Button();
-            this.MailListBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ExcelBtn = new System.Windows.Forms.Button();
-            this.TrashBtn = new System.Windows.Forms.Button();
             this.SideBarPanel.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.FormControlBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleGridView)).BeginInit();
             this.ChildPanel.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SideBarPanel
@@ -96,6 +96,87 @@ namespace Ongoren
             this.SideBarPanel.Name = "SideBarPanel";
             this.SideBarPanel.Size = new System.Drawing.Size(200, 549);
             this.SideBarPanel.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.TrashBtn);
+            this.panel7.Controls.Add(this.ExcelBtn);
+            this.panel7.Controls.Add(this.MailListBtn);
+            this.panel7.Controls.Add(this.HomeBtn);
+            this.panel7.Location = new System.Drawing.Point(0, 240);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 309);
+            this.panel7.TabIndex = 42;
+            // 
+            // TrashBtn
+            // 
+            this.TrashBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.TrashBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.TrashBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TrashBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TrashBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.TrashBtn.Location = new System.Drawing.Point(0, 144);
+            this.TrashBtn.Name = "TrashBtn";
+            this.TrashBtn.Size = new System.Drawing.Size(200, 50);
+            this.TrashBtn.TabIndex = 43;
+            this.TrashBtn.Text = "TRASH";
+            this.TrashBtn.UseVisualStyleBackColor = false;
+            this.TrashBtn.Click += new System.EventHandler(this.TrashBtn_Click);
+            // 
+            // ExcelBtn
+            // 
+            this.ExcelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.ExcelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.ExcelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ExcelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.ExcelBtn.Location = new System.Drawing.Point(0, 95);
+            this.ExcelBtn.Name = "ExcelBtn";
+            this.ExcelBtn.Size = new System.Drawing.Size(200, 50);
+            this.ExcelBtn.TabIndex = 42;
+            this.ExcelBtn.Text = "EXCEL PROCESS";
+            this.ExcelBtn.UseVisualStyleBackColor = false;
+            // 
+            // MailListBtn
+            // 
+            this.MailListBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.MailListBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.MailListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MailListBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MailListBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.MailListBtn.Location = new System.Drawing.Point(0, 47);
+            this.MailListBtn.Name = "MailListBtn";
+            this.MailListBtn.Size = new System.Drawing.Size(200, 50);
+            this.MailListBtn.TabIndex = 41;
+            this.MailListBtn.Text = "MAIL PROCESS";
+            this.MailListBtn.UseVisualStyleBackColor = false;
+            this.MailListBtn.Click += new System.EventHandler(this.MailListBtn_Click);
+            // 
+            // HomeBtn
+            // 
+            this.HomeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.HomeBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HomeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.HomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HomeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.HomeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.HomeBtn.Location = new System.Drawing.Point(0, 0);
+            this.HomeBtn.Name = "HomeBtn";
+            this.HomeBtn.Size = new System.Drawing.Size(200, 50);
+            this.HomeBtn.TabIndex = 40;
+            this.HomeBtn.Text = "HOME";
+            this.HomeBtn.UseVisualStyleBackColor = false;
+            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ongoren.Properties.Resources.Ongoren_Recovered;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
             // 
             // FormControlBar
             // 
@@ -607,86 +688,6 @@ namespace Ongoren
             this.ChildPanel.Size = new System.Drawing.Size(1200, 500);
             this.ChildPanel.TabIndex = 40;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.TrashBtn);
-            this.panel7.Controls.Add(this.ExcelBtn);
-            this.panel7.Controls.Add(this.MailListBtn);
-            this.panel7.Controls.Add(this.HomeBtn);
-            this.panel7.Location = new System.Drawing.Point(0, 240);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 309);
-            this.panel7.TabIndex = 42;
-            // 
-            // HomeBtn
-            // 
-            this.HomeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.HomeBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HomeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
-            this.HomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HomeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.HomeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.HomeBtn.Location = new System.Drawing.Point(0, 0);
-            this.HomeBtn.Name = "HomeBtn";
-            this.HomeBtn.Size = new System.Drawing.Size(200, 50);
-            this.HomeBtn.TabIndex = 40;
-            this.HomeBtn.Text = "HOME";
-            this.HomeBtn.UseVisualStyleBackColor = false;
-            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
-            // 
-            // MailListBtn
-            // 
-            this.MailListBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.MailListBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
-            this.MailListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MailListBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.MailListBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.MailListBtn.Location = new System.Drawing.Point(0, 47);
-            this.MailListBtn.Name = "MailListBtn";
-            this.MailListBtn.Size = new System.Drawing.Size(200, 50);
-            this.MailListBtn.TabIndex = 41;
-            this.MailListBtn.Text = "MAIL PROCESS";
-            this.MailListBtn.UseVisualStyleBackColor = false;
-            this.MailListBtn.Click += new System.EventHandler(this.MailListBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Ongoren.Properties.Resources.Ongoren_Recovered;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 40;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ExcelBtn
-            // 
-            this.ExcelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.ExcelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
-            this.ExcelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExcelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ExcelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ExcelBtn.Location = new System.Drawing.Point(0, 95);
-            this.ExcelBtn.Name = "ExcelBtn";
-            this.ExcelBtn.Size = new System.Drawing.Size(200, 50);
-            this.ExcelBtn.TabIndex = 42;
-            this.ExcelBtn.Text = "EXCEL";
-            this.ExcelBtn.UseVisualStyleBackColor = false;
-            // 
-            // TrashBtn
-            // 
-            this.TrashBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.TrashBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
-            this.TrashBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TrashBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TrashBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.TrashBtn.Location = new System.Drawing.Point(0, 144);
-            this.TrashBtn.Name = "TrashBtn";
-            this.TrashBtn.Size = new System.Drawing.Size(200, 50);
-            this.TrashBtn.TabIndex = 43;
-            this.TrashBtn.Text = "TRASH";
-            this.TrashBtn.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,13 +703,13 @@ namespace Ongoren
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SideBarPanel.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.FormControlBar.ResumeLayout(false);
             this.FormControlBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleGridView)).EndInit();
             this.ChildPanel.ResumeLayout(false);
             this.ChildPanel.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

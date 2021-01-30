@@ -33,7 +33,7 @@ namespace Ongoren
         {
             using (DataContext db = new DataContext())
             {
-                var people = db.People.Include("Company")
+                var people = db.People
                     .Where(x => x.Status == Status.Active || x.Status == Status.Canceled)
                     .OrderByDescending(x => x.CreatedDate)
                     .Select(x => new PeopleVM
@@ -103,7 +103,7 @@ namespace Ongoren
                 }
             };
 
-            func(Controls);
+            func(ChildPanel.Controls);
 
             AddBtn.Enabled = true;
             UpdateBtn.Enabled = false;
@@ -123,7 +123,7 @@ namespace Ongoren
             dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView.DefaultCellStyle.BackColor = Color.FromArgb(57, 62, 70);
             dataGridView.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void PeopleGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -376,7 +376,7 @@ namespace Ongoren
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Kullanıcıyı Silmek İstediğinizden Emin Misiniz?", "Uyarı", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Kullanıcı Silinecek. Onaylıyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -416,6 +416,13 @@ namespace Ongoren
         {
             if(activeForm != null)
                 activeForm.Close();
+
+            LoadData();
+        }
+
+        private void TrashBtn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Trash());
         }
     }
 }
