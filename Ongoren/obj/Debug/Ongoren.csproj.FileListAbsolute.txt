@@ -18,3 +18,4 @@ C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Migrations.Second.
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.MailListForm.resources
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Trash.resources
 C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.ExcelProcess.resources
+C:\Users\EXPER\source\repos\Ongoren\Ongoren\obj\Debug\Ongoren.Migrations.MailContent.resources
