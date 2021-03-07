@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ongoren.Core.Entity.Enums;
 using Ongoren.Models.Data.Entities;
+using System.Net.Mail;
 
 namespace Ongoren
 {
@@ -21,12 +22,94 @@ namespace Ongoren
         {
             InitializeComponent();
             DataGridViewCustomize(PeopleGridView);
+            CheckMailDate();
             //var doksangunoncesi = DateTime.Now.AddDays(-90);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        public void CheckMailDate()
+        {
+            using (DataContext db = new DataContext())
+            {
+                var fiveDaysBefore = DateTime.Now.AddDays(-30);
+                var today = DateTime.Now;
+
+                List<Person> mailingPoeple = db.People.Where(x => x.MailSendDate >= fiveDaysBefore && x.MailSendDate <= today && x.MailStatus == MailStatus.NotSentYet && x.Status == Status.Active)
+                    .OrderByDescending(x=>x.Name).ToList();
+
+                if (mailingPoeple.Count > 0)
+                    SendMail(mailingPoeple);
+            }
+        }
+
+        public void SendMail(List<Person> people)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var maillingList = db.MailLists.Where(x => x.Status == Status.Active).ToList();
+                var title = db.MailContents.OrderByDescending(x => x.CreatedDate).FirstOrDefault();
+
+                MailMessage message = new MailMessage();
+                SmtpClient client = new SmtpClient();
+
+                client.Credentials = new System.Net.NetworkCredential("sapiens.permit@outlook.com.tr", "Yesim180220");
+                client.Port = 587;
+                client.Host = "smtp.office365.com";//smtp.live.com(hotmail.com için) smtp.office365.com(outlook.com içim) smtp.gmail.com(gmail.com için)
+                client.EnableSsl = true;
+                message.From = new MailAddress("sapiens.permit@outlook.com.tr");
+                message.IsBodyHtml = true;
+
+                foreach (var item in maillingList)
+                {
+                    string a = "";
+                    foreach (var person in people)
+                    {
+                        a += "<tr style='text-align:center;'>" +
+                                    $"<td>{person.WpOrRp}</td>" +
+                                    $"<td>{person.ApplicationNo}</td>" +
+                                    $"<td>{person.YKN}</td>" +
+                                    $"<td>{person.Name} {person.Surname}</td>" +
+                                    $"<td>{person.CompanyName}</td>" +
+                                    $"<td>{person.ApplicationDate}</td>" +
+                                    $"<td>{person.IssueDate}</td>" +
+                                    $"<td>{person.ExpiryDate}</td>" +
+                                    $"<td>{person.ImmigrationTrackingEndDate}</td>" +
+                                    $"<td>{person.ImmigrationFree}</td>" +
+                                "</tr>";
+                        var p = db.People.Find(person.Id);
+                        p.MailStatus = MailStatus.Sended;
+                        db.SaveChanges();
+                    }
+
+                    message.To.Add(item.MailTo);
+                    message.Subject = title.Title.ToString();
+                    message.Body =
+                        "<table border='2' style='padding:10px;'>" +
+                            "<thead>" +
+                                "<tr style='text-align:center;'>" +
+                                    "<th>Wp/Rp</th>" +
+                                    "<th>Application No</th>" +
+                                    "<th>YKN</th>" +
+                                    "<th>Name Surname</th>" +
+                                    "<th>Company Name</th>" +
+                                    "<th>Application Date</th>" +
+                                    "<th>Issue Date</th>" +
+                                    "<th>Expiry Date</th>" +
+                                    "<th>Immigration Tracking End Date</th>" +
+                                    "<th>Immigration Free</th>" +
+                                "</tr>" +
+                            "</thead>" +
+                            "<tbody>" +
+                                $"{a}" +
+                            "</tbody>" +
+                        "</table>";
+                    client.Send(message);
+                }
+            }
         }
 
         public void LoadData()
@@ -77,6 +160,15 @@ namespace Ongoren
                 PeopleGridView.Columns[10].HeaderText = "Expiry Date";
                 PeopleGridView.Columns[11].HeaderText = "Immigration Tracking End Date";
                 PeopleGridView.Columns[12].HeaderText = "Immigration Free";
+
+                for (int i = 1; i < 12; i++)
+                {
+                    if (i <= 2 || i >= 8)
+                        PeopleGridView.Columns[i].ReadOnly = true;
+                }
+
+
+
 
                 WpRpComboBox.SelectedIndex = 0;
                 StatusComboBox.SelectedIndex = 0;
@@ -162,13 +254,13 @@ namespace Ongoren
         {
             var txtBox = sender as TextBox;
             if (txtBox.Text == "Place Holder Text..." || txtBox.Text == "Search")
-                txtBox.Text = "";
+                txtBox.Text = string.Empty; ;
         }
 
         private void TextBox_Leave(object sender, EventArgs e)
         {
             var txtBox = sender as TextBox;
-            if (txtBox.Text.Trim() == "")
+            if (txtBox.Text.Trim() == string.Empty)
             {
                 if (txtBox.Name == "SearchTxt")
                     txtBox.Text = "Search";
@@ -269,10 +361,10 @@ namespace Ongoren
 
             using (DataContext db = new DataContext())
             {
-                var person = db.People.Where(x => x.ApplicationNo == AppNoTxt.Text).FirstOrDefault();
+                var person = db.People.Where(x => x.ApplicationNo == AppNoTxt.Text && x.YKN == YknTxt.Text).FirstOrDefault();
 
                 if (person != null)
-                    MessageBox.Show("Girdiğiniz Application No Kayıtlar Arasında Var", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Girdiğiniz Application No Veya YKN Kayıtlar Arasında Var", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     try
@@ -345,6 +437,17 @@ namespace Ongoren
 
                 var newMailSendDate = person.ExpiryDate != ExpiryDateDtp.Value ? ExpiryDateDtp.Value.AddDays(-90) : ExpiryDateDtp.Value;
 
+                MailStatus mailStatus;
+
+                if (person.Status == Status.Canceled && person.MailStatus == MailStatus.Sended)
+                {
+                    if (status == Status.Active)
+                        mailStatus = MailStatus.NotSentYet;
+                    else
+                        mailStatus = MailStatus.Sended;
+                }
+                else
+                    mailStatus = person.MailStatus;
 
                 person.Status = status;
                 person.WpOrRp = WpRpComboBox.Text;
@@ -359,7 +462,7 @@ namespace Ongoren
                 person.ImmigrationTrackingEndDate = ImmTrackEndDateDtp.Value.Date;
                 person.MailSendDate = newMailSendDate;
                 person.ImmigrationFree = ImmigrationFreeTxt.Text;
-                person.MailStatus = MailStatus.NotSentYet;
+                person.MailStatus = mailStatus;
                 person.ModifiedDate = DateTime.Now;
 
                 if (!CheckFormControls(AppNoTxt, YknTxt, NameTxt, SurnameTxt, CompanyNameTxt, ImmigrationFreeTxt))
@@ -432,6 +535,21 @@ namespace Ongoren
         {
             OpenChildForm(new Trash());
             SearchTxt.Enabled = false;
+        }
+
+        private void PeopleGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+                case Keys.Enter:
+                    UpdateBtn_Click(sender, e);
+                    break;
+                case Keys.Delete:
+                    DeleteBtn_Click(sender, e);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -97,6 +97,7 @@
     <Compile Include="Models\Data\Entities\MailContent.cs" />
     <Compile Include="Models\Data\Entities\MailList.cs" />
     <Compile Include="Models\Data\Entities\Person.cs" />
+    <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\PeopleVM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

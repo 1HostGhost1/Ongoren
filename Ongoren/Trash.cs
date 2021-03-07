@@ -23,6 +23,7 @@ namespace Ongoren
 
             MainForm mainForm = new MainForm();
             mainForm.DataGridViewCustomize(TrashPeopleGridView);
+            mainForm.DataGridViewCustomize(TrashMailGridView);
         }
 
         private void Trash_Load(object sender, EventArgs e)
@@ -32,8 +33,10 @@ namespace Ongoren
 
         private void LoadData()
         {
+            
             using (DataContext db = new DataContext())
             {
+                #region Member
                 var people = db.People
                     .Where(x => x.Status == Status.Deleted)
                     .OrderByDescending(x => x.ModifiedDate)
@@ -78,7 +81,36 @@ namespace Ongoren
                     TakeItBackBtn.Enabled = false;
                 else
                     TakeItBackBtn.Enabled = true;
-            }
+                #endregion
+
+                #region Mail
+
+                var mails = db.MailLists
+                    .Where(x => x.Status == Status.Deleted)
+                    .OrderByDescending(x=>x.ModifiedDate)
+                    .Select(x=> new MailModel
+                    {
+                        Id = x.Id,
+                        Status = x.Status,
+                        MailTo = x.MailTo
+                    })
+                    .ToList();
+                
+                TrashMailGridView.DataSource = mails;
+
+                TrashMailGridView.DefaultCellStyle.BackColor = Color.FromArgb(254, 113, 113);
+
+
+                TrashMailGridView.Columns[0].Visible = false;
+                TrashMailGridView.Columns[1].HeaderText = "Status";
+                TrashMailGridView.Columns[2].HeaderText = "Mail To";
+
+                if (TrashMailGridView.RowCount <= 0 || TrashMailIdTxt.Text == string.Empty)
+                    TakeItBackMailBtn.Enabled = false;
+                else
+                    TakeItBackMailBtn.Enabled = true;
+                #endregion
+            }            
         }
 
         private void TakeItBackBtn_Click(object sender, EventArgs e)
@@ -100,14 +132,59 @@ namespace Ongoren
                     db.SaveChanges();
                     TrashUserIdTxt.Text = string.Empty;
                     LoadData();
+                    TakeItBackBtn.Enabled = false;
                 }
             }
         }
 
         private void TrashPeopleGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TrashUserIdTxt.Text = TrashPeopleGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            TakeItBackBtn.Enabled = true;
+            try
+            {
+                TrashUserIdTxt.Text = TrashPeopleGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                TakeItBackBtn.Enabled = true;
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void TrashMailGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                TrashMailIdTxt.Text = TrashMailGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                TakeItBackMailBtn.Enabled = true;
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void TakeItBackMailBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Kullanıcı Geri Alınacak. Onaylıyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                DialogResult activeOrCanceled = MessageBox.Show("Durumu(Status) Active Olacak Kabul Ediyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo);
+
+                using (DataContext db = new DataContext())
+                {
+                    var id = Convert.ToInt32(TrashMailIdTxt.Text);
+                    var mail = db.MailLists.Find(id);
+
+                    mail.Status = activeOrCanceled == DialogResult.Yes ? Status.Active : Status.Canceled;
+                    mail.ModifiedDate = DateTime.Now;
+
+                    db.SaveChanges();
+                    TrashMailIdTxt.Text = string.Empty;
+                    LoadData();
+                    TakeItBackMailBtn.Enabled = false;
+                }
+            }
         }
     }
 }

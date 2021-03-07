@@ -252,6 +252,7 @@ namespace Ongoren
             this.PeopleGridView.Size = new System.Drawing.Size(1200, 269);
             this.PeopleGridView.TabIndex = 2;
             this.PeopleGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PeopleGridView_CellClick);
+            this.PeopleGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PeopleGridView_KeyDown);
             // 
             // WpRpComboBox
             // 
