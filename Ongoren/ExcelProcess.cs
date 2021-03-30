@@ -63,13 +63,11 @@ namespace Ongoren
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             PeopleLv.Items.Clear();
-            List<string> a = new List<string>();
             List<Person> people = new List<Person>();
             foreach (var item in CompaiesNameFlp.Controls)
             {
                 if (item is CheckBox && (item as CheckBox).Checked)
                 {
-                    a.Add((item as CheckBox).Text);
                     using (DataContext db = new DataContext())
                     {
                         var cName = (item as CheckBox).Text;
