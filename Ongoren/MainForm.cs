@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Ongoren.Core.Entity.Enums;
 using Ongoren.Models.Data.Entities;
 using System.Net.Mail;
+using System.Linq.Expressions;
 
 namespace Ongoren
 {
@@ -25,6 +26,16 @@ namespace Ongoren
             CheckMailDate();
             //var doksangunoncesi = DateTime.Now.AddDays(-90);
         }
+
+        public bool NameOrderByDesc { get; set; }
+        public bool SurnameOrderByDesc { get; set; }
+        public bool CompanyOrderByDesc { get; set; }
+        public bool AppDateOrderByDesc { get; set; }
+        public bool IssueDateOrderByDesc { get; set; }
+        public bool ExpiryDateOrderByDesc { get; set; }
+        public bool ImmFreeEndDateOrderByDesc { get; set; }
+        public bool ImmFreeOrderByDesc { get; set; }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -152,14 +163,14 @@ namespace Ongoren
                 PeopleGridView.Columns[2].HeaderText = "WP/RP";
                 PeopleGridView.Columns[3].HeaderText = "Application No";
                 PeopleGridView.Columns[4].HeaderText = "YKN";
-                PeopleGridView.Columns[5].HeaderText = "Name";
-                PeopleGridView.Columns[6].HeaderText = "Surname";
-                PeopleGridView.Columns[7].HeaderText = "Company Name";
-                PeopleGridView.Columns[8].HeaderText = "Application Date";
-                PeopleGridView.Columns[9].HeaderText = "Issue Date";
-                PeopleGridView.Columns[10].HeaderText = "Expiry Date";
-                PeopleGridView.Columns[11].HeaderText = "Immigration Tracking End Date";
-                PeopleGridView.Columns[12].HeaderText = "Immigration Free";
+                PeopleGridView.Columns[5].HeaderText = "Name ↑↓";
+                PeopleGridView.Columns[6].HeaderText = "Surname ↑↓";
+                PeopleGridView.Columns[7].HeaderText = "Company Name ↑↓";
+                PeopleGridView.Columns[8].HeaderText = "Application Date ↑↓";
+                PeopleGridView.Columns[9].HeaderText = "Issue Date ↑↓";
+                PeopleGridView.Columns[10].HeaderText = "Expiry Date ↑↓";
+                PeopleGridView.Columns[11].HeaderText = "Immigration Tracking End Date ↑↓";
+                PeopleGridView.Columns[12].HeaderText = "Immigration Free ↑↓";
 
                 for (int i = 1; i < 12; i++)
                 {
@@ -246,9 +257,390 @@ namespace Ongoren
             }
             else
             {
+                using (DataContext db = new DataContext())
+                {
+                    List<PeopleVM> people;
+
+                    switch (e.ColumnIndex)
+                    {
+                        case 5: //Name
+                            if (NameOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x => x.Name).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                NameOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x => x.Name).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                NameOrderByDesc = true;
+                            }
+                            break;
+                        case 6: //Surname
+                            if (SurnameOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x=>x.Surname).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                SurnameOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x=>x.Surname).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                SurnameOrderByDesc = true;
+                            }
+                            break;
+                        case 7: //Company
+                            if (CompanyOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x=>x.CompanyName).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                CompanyOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x=>x.CompanyName).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                CompanyOrderByDesc = true;
+                            }
+                            break;
+                        case 8: //App Date
+                            if (AppDateOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x => x.ApplicationDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                AppDateOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x => x.ApplicationDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                AppDateOrderByDesc = true;
+                            }
+                            break;
+                        case 9: //Issue Date
+                            if (IssueDateOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x => x.IssueDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                IssueDateOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x => x.IssueDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                IssueDateOrderByDesc = true;
+                            }
+                            break;
+                        case 10: //Expiry Date
+                            if (ExpiryDateOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x => x.ExpiryDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                ExpiryDateOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x => x.ExpiryDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                ExpiryDateOrderByDesc = true;
+                            }
+                            break;
+                        case 11: //Imm Track End Date
+                            if (ImmFreeEndDateOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x => x.ImmigrationTrackingEndDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                ImmFreeEndDateOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x => x.ImmigrationTrackingEndDate).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                ImmFreeEndDateOrderByDesc = true;
+                            }
+                            break;
+                        case 12: //Imm Free
+                            if (ImmFreeOrderByDesc)
+                            {
+                                people = db.People.OrderBy(x => x.ImmigrationFree).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                ImmFreeOrderByDesc = false;
+                            }
+                            else
+                            {
+                                people = db.People.OrderByDescending(x => x.ImmigrationFree).Select(x => new PeopleVM
+                                {
+                                    Status = x.Status,
+                                    WpOrRp = x.WpOrRp,
+                                    AppNo = x.ApplicationNo,
+                                    YKN = x.YKN,
+                                    Name = x.Name,
+                                    Surname = x.Surname,
+                                    CompanyName = x.CompanyName,
+                                    AppDate = x.ApplicationDate,
+                                    IssueDate = x.IssueDate,
+                                    ExpiryDate = x.ExpiryDate,
+                                    ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                    ImmigrationFree = x.ImmigrationFree
+                                }).ToList();
+                                ImmFreeOrderByDesc = true;
+                            }
+                            break;
+                        default:
+                            people = db.People.OrderByDescending(x => x.CreatedDate).Select(x => new PeopleVM
+                            {
+                                Status = x.Status,
+                                WpOrRp = x.WpOrRp,
+                                AppNo = x.ApplicationNo,
+                                YKN = x.YKN,
+                                Name = x.Name,
+                                Surname = x.Surname,
+                                CompanyName = x.CompanyName,
+                                AppDate = x.ApplicationDate,
+                                IssueDate = x.IssueDate,
+                                ExpiryDate = x.ExpiryDate,
+                                ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+                                ImmigrationFree = x.ImmigrationFree
+                            }).ToList();
+                            break;
+                    }
+
+                    PeopleGridView.DataSource = people;
+
+                    for (int i = 0; i < PeopleGridView.Rows.Count; i++)
+                    {
+                        string status = PeopleGridView.Rows[i].Cells[1].Value.ToString();
+                        if (status == "Active")
+                            PeopleGridView.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(190, 219, 187);
+                        else
+                            PeopleGridView.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(254, 113, 113);
+                    }
+                }
                 //Sort Order asc ve desc yapmayı unutma
             }
         }
+
+        //private IQueryable<PeopleVM> SelectPerson(Expression<Func<Person, object>> exp, bool orderByDesc)
+        //{
+        //    IQueryable<PeopleVM> people;
+
+        //    using (DataContext db = new DataContext())
+        //    {
+        //        people = db.People.OrderByDescending(exp).Select(x => new PeopleVM
+        //        {
+        //            Status = x.Status,
+        //            WpOrRp = x.WpOrRp,
+        //            AppNo = x.ApplicationNo,
+        //            YKN = x.YKN,
+        //            Name = x.Name,
+        //            Surname = x.Surname,
+        //            CompanyName = x.CompanyName,
+        //            AppDate = x.ApplicationDate,
+        //            IssueDate = x.IssueDate,
+        //            ExpiryDate = x.ExpiryDate,
+        //            ImmTrackEndDate = x.ImmigrationTrackingEndDate,
+        //            ImmigrationFree = x.ImmigrationFree
+        //        }).AsQueryable();
+        //    }
+        //    return people;
+        //}
 
         private void TextBox_Enter(object sender, EventArgs e)
         {
