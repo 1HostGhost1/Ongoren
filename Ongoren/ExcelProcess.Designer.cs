@@ -37,7 +37,7 @@ namespace Ongoren
             this.Ykn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PersonName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PersonSurname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CompanyName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CompanyNameLv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AppDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IssueDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ExpiryDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -73,7 +73,7 @@ namespace Ongoren
             this.Ykn,
             this.PersonName,
             this.PersonSurname,
-            this.CompanyName,
+            this.CompanyNameLv,
             this.AppDate,
             this.IssueDate,
             this.ExpiryDate,
@@ -118,11 +118,11 @@ namespace Ongoren
             this.PersonSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PersonSurname.Width = 70;
             // 
-            // CompanyName
+            // CompanyNameLv
             // 
-            this.CompanyName.Text = "Company Name";
-            this.CompanyName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CompanyName.Width = 100;
+            this.CompanyNameLv.Text = "Company Name";
+            this.CompanyNameLv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CompanyNameLv.Width = 100;
             // 
             // AppDate
             // 
@@ -196,7 +196,7 @@ namespace Ongoren
         private System.Windows.Forms.ColumnHeader Ykn;
         private System.Windows.Forms.ColumnHeader PersonName;
         private System.Windows.Forms.ColumnHeader PersonSurname;
-        private System.Windows.Forms.ColumnHeader CompanyName;
+        private System.Windows.Forms.ColumnHeader CompanyNameLv;
         private System.Windows.Forms.ColumnHeader AppDate;
         private System.Windows.Forms.ColumnHeader IssueDate;
         private System.Windows.Forms.ColumnHeader ExpiryDate;

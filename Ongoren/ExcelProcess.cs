@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ongoren.Core.Entity.Enums;
 using Ongoren.Models.Data.Entities;
+using _Excel = Microsoft.Office.Interop.Excel;
 
 namespace Ongoren
 {
@@ -82,6 +83,65 @@ namespace Ongoren
 
         private void ExtractToExcelBtn_Click(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var path = saveFileDialog.FileName;
+                var splitName = path.Split('\\');
+                var name = splitName[(splitName.Length - 1)];
+
+                _Excel.Application excel = new _Excel.Application();
+
+                _Excel.Workbook workBook = excel.Workbooks.Add(_Excel.XlWBATemplate.xlWBATWorksheet);
+                _Excel.Worksheet workSheet = workBook.Worksheets[1];
+
+                workSheet.Cells[1, 1] = "WP/RP";
+                workSheet.Cells[1, 2] = "Application No";
+                workSheet.Cells[1, 3] = "YKN";
+                workSheet.Cells[1, 4] = "Name";
+                workSheet.Cells[1, 5] = "Surname";
+                workSheet.Cells[1, 6] = "Company Name";
+                workSheet.Cells[1, 7] = "Application Date";
+                workSheet.Cells[1, 8] = "Issue Date";
+                workSheet.Cells[1, 9] = "Expiry Date";
+                workSheet.Cells[1, 10] = "Immigration Tracking End Date";
+                workSheet.Cells[1, 11] = "Immigration Free";
+
+
+                for (int i = 0; i < PeopleLv.Items.Count; i++)
+                {
+                    for (int j = 0; j < PeopleLv.Items[i].SubItems.Count; j++)
+                    {
+                        workSheet.Cells[i+2, j+1] = PeopleLv.Items[i].SubItems[j].Text;
+                    }
+                }
+
+                workBook.SaveAs(path);
+                excel.Quit();
+
+                MessageBox.Show("Excel'e Başarılı İle Aktarıldı","Ongoren",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+
+                #region Second Line
+                //object misValue = System.Reflection.Missing.Value;
+
+                //_Excel.Workbook workbook = excel.Workbooks.Add(misValue);
+                //_Excel.Worksheet worksheet = (_Excel.Worksheet)workbook.Worksheets[1];
+
+                //for (int i = 0; i < PeopleLv.Items.Count; i++)
+                //{
+                //    for (int j = 0; j < PeopleLv.Items[i].SubItems.Count; j++)
+                //    {
+                //        worksheet.Cells[i, j] = PeopleLv.Items[i].SubItems[j].Text;
+                //    }
+                //}
+
+                //workbook.Save();
+                //workbook.SaveAs(path, _Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue);
+                //excel.Quit();
+                #endregion
+            }
         }
     }
 }
